@@ -31,7 +31,7 @@ class MakeRepository extends AbstractGenerator
 
         $name = $this->parseName($nameInput);
 
-        $path = $this->getPath($name);
+        $path = $this->getPath($name . 'Repository');
 
         if ($this->alreadyExists($nameInput)) {
             $this->error($this->type . ' already exists!');
