@@ -48,6 +48,11 @@
                                 @foreach($group['items'] as $setting)
                                     <div class="form-group" data-priority="{{ $setting['priority'] or '' }}">
                                         <label class="control-label block">{{ $setting['label'] or '' }}</label>
+                                        <p class="mb5">
+                                            <small>
+                                                <code>get_theme_option('{{ $setting['name'] }}')</code>
+                                            </small>
+                                        </p>
                                         {!! call_user_func_array([form(), $setting['type']], call_user_func($setting['params'])) !!}
                                         <span class="help-block">{!! $setting['helper'] or '' !!}</span>
                                     </div>

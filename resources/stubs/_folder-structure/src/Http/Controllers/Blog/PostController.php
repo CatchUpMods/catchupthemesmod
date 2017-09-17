@@ -58,9 +58,9 @@ class PostController extends AbstractController
      */
     protected function defaultTemplate()
     {
-        if(view()->exists($this->currentThemeName . '::front.post-templates.' . str_slug($this->post->page_template))) {
-            return $this->view('front.post-templates.' . str_slug($this->post->page_template));
+        if(view()->exists($this->currentThemeName . '::front.blog.post-templates.' . str_slug($this->post->page_template))) {
+            return $this->view('front.blog.post-templates.' . str_slug($this->post->page_template));
         }
-        return $this->view('front.post-templates.default');
+        return $this->view('front.blog.post-templates.default');
     }
 }

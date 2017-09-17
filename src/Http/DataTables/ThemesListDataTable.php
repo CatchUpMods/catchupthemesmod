@@ -68,7 +68,7 @@ class ThemesListDataTable extends AbstractDataTables
      */
     protected function fetchDataForAjax()
     {
-        return datatable()->of($this->repository)
+        return webed_datatable()->of($this->repository)
             ->rawColumns(['description', 'actions', 'thumbnail'])
             ->editColumn('description', function ($item) {
                 return array_get($item, 'description') . '<br><br>'

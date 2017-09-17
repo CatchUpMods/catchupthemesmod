@@ -45,6 +45,6 @@ class TagController extends AbstractController
 
         $this->dis['relatedPosts'] = get_posts_by_tag($item->id);
 
-        return $this->view('front.tag-templates.default');
+        return $this->view('front.blog.tag-templates.default');
     }
 }
