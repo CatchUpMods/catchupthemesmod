@@ -1,7 +1,6 @@
 <?php namespace WebEd\Base\ThemesManagement\Http\Controllers;
 
 use WebEd\Base\Http\Controllers\BaseAdminController;
-use Illuminate\Support\Facades\Artisan;
 use WebEd\Base\ThemesManagement\Actions\DisableThemeAction;
 use WebEd\Base\ThemesManagement\Actions\EnableThemeAction;
 use WebEd\Base\ThemesManagement\Actions\InstallThemeAction;

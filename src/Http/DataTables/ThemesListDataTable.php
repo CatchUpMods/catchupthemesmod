@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\File;
 use WebEd\Base\Http\DataTables\AbstractDataTables;
-use Yajra\Datatables\Engines\CollectionEngine;
-use Yajra\Datatables\Engines\EloquentEngine;
-use Yajra\Datatables\Engines\QueryBuilderEngine;
 
 class ThemesListDataTable extends AbstractDataTables
 {
@@ -18,7 +15,7 @@ class ThemesListDataTable extends AbstractDataTables
     /**
      * @return array
      */
-    public function headings()
+    public function headings(): array
     {
         return [
             'thumbnail' => [
@@ -43,7 +40,7 @@ class ThemesListDataTable extends AbstractDataTables
     /**
      * @return array
      */
-    public function columns()
+    public function columns(): array
     {
         return [
             ['data' => 'thumbnail', 'name' => 'thumbnail', 'searchable' => false, 'orderable' => false],
@@ -56,7 +53,7 @@ class ThemesListDataTable extends AbstractDataTables
     /**
      * @return string
      */
-    public function run()
+    public function run(): string
     {
         $this->setAjaxUrl(route('admin::themes.index.post'), 'POST');
 
@@ -64,7 +61,7 @@ class ThemesListDataTable extends AbstractDataTables
     }
 
     /**
-     * @return CollectionEngine|EloquentEngine|QueryBuilderEngine|mixed
+     * @return mixed
      */
     protected function fetchDataForAjax()
     {
@@ -146,5 +143,13 @@ class ThemesListDataTable extends AbstractDataTables
 
                 return $activeBtn . $disableBtn . $installBtn . $updateBtn . $uninstallBtn;
             });
+    }
+
+    /**
+     * @return array
+     */
+    protected function groupAction(): array
+    {
+        return [];
     }
 }
