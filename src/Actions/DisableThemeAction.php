@@ -16,7 +16,7 @@ class DisableThemeAction extends AbstractAction
 
         do_action(WEBED_THEME_DISABLED, $alias);
 
-        themes_management()->refreshComposerAutoload();
+        modules_management()->refreshComposerAutoload();
 
         return $this->success('Your theme has been disabled');
     }

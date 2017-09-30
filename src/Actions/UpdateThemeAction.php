@@ -19,7 +19,7 @@ class UpdateThemeAction extends AbstractAction
     {
         do_action(WEBED_THEME_BEFORE_UPDATE, $alias);
 
-        $theme = get_plugin($alias);
+        $theme = get_theme_information($alias);
 
         if (!$theme) {
             return $this->error('Theme not exists');
